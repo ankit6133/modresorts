@@ -1,0 +1,26 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  name: tutorial-pipeline-run-1
+spec:
+  params:
+    - name: BUILDER_IMAGE
+      value: 'quay.io/buildah/stable:latest'
+    - name: TLSVERIFY
+      value: 'false'
+    - name: target-namespace
+      value: dev
+    - name: repo-url
+      value: https://github.com/pdfruth/modresorts
+  pipelineRef:
+    name: tutorial-pipeline
+  workspaces:
+  - name: shared-data
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+  serviceAccountName: pipeline
