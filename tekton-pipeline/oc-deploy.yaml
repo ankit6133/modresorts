@@ -22,5 +22,5 @@ spec:
         sleep 10
         echo "Done deploying open liberty application"
         sleep 15
-        ROUTE=$(oc get route cos --template='{{ .spec.host }}')
-        echo "http://${ROUTE}/CustomerOrderServicesWeb"
+        ROUTE=$(oc get route modresorts --template='{{ .spec.host }}')
+        echo "http://${ROUTE}"
