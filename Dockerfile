@@ -1,5 +1,6 @@
 ## Build stage
-FROM docker.io/maven:3.8.4-openjdk-11 AS builder
+#FROM docker.io/maven:3.8.4-openjdk-11 AS builder
+FROM docker.io/maven:3.8.4-ibmjava AS builder
 COPY ./ /
 RUN mvn clean package
 
