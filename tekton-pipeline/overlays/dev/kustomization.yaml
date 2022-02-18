@@ -1,4 +1,4 @@
-namespace: dev
+namespace: pdf-dev
 resources:
 - configmap.yaml
 - secret-db-creds.yaml
