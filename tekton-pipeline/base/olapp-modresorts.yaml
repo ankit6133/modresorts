@@ -5,16 +5,6 @@ metadata:
 spec:
   applicationImage: ''
   pullPolicy: Always
-  readinessProbe:
-    httpGet:
-      path: /health/ready
-      port: 9443
-      scheme: HTTPS
-  livenessProbe:
-    httpGet:
-      path: /health/live
-      port: 9443
-      scheme: HTTPS
   service:
     annotations:
       service.beta.openshift.io/serving-cert-secret-name: modresorts-tls
@@ -27,8 +17,6 @@ spec:
   envFrom:
   - configMapRef:
       name: modresorts-config
-  - secretRef:
-      name: db-creds
   monitoring:
     endpoints:
       - basicAuth:
