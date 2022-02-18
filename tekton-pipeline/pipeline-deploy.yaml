@@ -16,6 +16,9 @@ spec:
     - name: target-namespace
       type: string
       description: The target project
+    - name: target-environment
+      type: string
+      description: The target environment (dev, staging, prod)
   workspaces:
     - name: shared-data
       description: |
@@ -58,5 +61,7 @@ spec:
       params:
         - name: target-namespace
           value: $(params.target-namespace)
+        - name: target-environment
+          value: $(params.target-environment)
       runAfter:
         - build-push

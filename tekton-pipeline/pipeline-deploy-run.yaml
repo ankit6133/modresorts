@@ -10,6 +10,8 @@ spec:
       value: 'false'
     - name: target-namespace
       value: dev
+    - name: target-environment
+      value: dev
     - name: repo-url
       value: https://github.com/pdfruth/modresorts
   pipelineRef:

@@ -9,18 +9,20 @@ spec:
   params:
     - name: target-namespace
       description: target-namespace
+    - name: target-environment
+      description: target-environment
   steps:
     - name: deploy-open-liberty
       image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
       script: |
         #!/bin/bash
         cd $(workspaces.source.path)/tekton-pipeline
-        oc kustomize overlays/$(params.target-namespace)
-        oc apply -k overlays/$(params.target-namespace) 
+        oc kustomize overlays/$(params.target-environment)
+        oc apply -k overlays/$(params.target-environment) 
         sleep 10
         oc delete pod `oc get pods | grep modresorts | awk '{print $1}'`
         sleep 10
         echo "Done deploying open liberty application"
         sleep 15
         ROUTE=$(oc get route modresorts --template='{{ .spec.host }}')
-        echo "http://${ROUTE}"
+        echo "https://${ROUTE}"
