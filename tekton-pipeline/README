@@ -1,9 +1,11 @@
+Create a new project
+oc new-project pdf-dev
 
 Create a secret containing Docker Hub creds
-oc create -f build-secrets.yaml
+oc create -f dockerhub-secret.yaml
 
 Add the Docker Hub credentials to the pipeline service accounts list of creds
-oc secrets link pipeline build-pass
+oc secrets link pipeline dockerhub-secret
 
 grant the pipeline service account permission to operator on openliberty applications
 oc adm policy add-role-to-user openlibertyapp -z pipeline
