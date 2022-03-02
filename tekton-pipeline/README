@@ -1,5 +1,28 @@
+Pre-reqs
+Openshift Pipelines operator
+Openliberty Operator (watching all namespaces)
+  v0.7.0 or v0.7.1 (v0.8.0 is not currently supported on s390x)
+
+If you haven't already, register a free account on Dockerhub, and create an auth token
+  See https://hub.docker.com/signup and https://hub.docker.com/settings/security
+
+Git clone the repository
+  git clone https://github.com/pdfruth/modresorts
+
+cd tekton-pipline
+
+Edit dockerhub-secrets.yaml providing your dockerhub userid and token
+
+
+Decide on a project name for your pipeline deployment (herein called <namespace>)
+
+Edit overlays/dev/kustomization.yaml, setting the <namespace>
+
 Create a new project
-oc new-project pdf-dev
+oc new-project <namespace>
+
+Enable pipeline service account to create privileged containers
+oc adm policy add-scc-to-user privileged -z pipeline
 
 Create a secret containing Docker Hub creds
 oc create -f dockerhub-secret.yaml
