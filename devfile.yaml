@@ -30,7 +30,7 @@ components:
     name: dev
 commands:
   - exec:
-      commandLine: 'echo "run command "; mvn -DinstallDirectory=/opt/ol/wlp -Ddebug=false -DhotTests=true -DcompileWait=3 io.openliberty.tools:liberty-maven-plugin:3.5.1:dev'
+      commandLine: 'echo "run command "; mvn -DinstallDirectory=/opt/ol/wlp -Ddebug=false -DhotTests=false -DcompileWait=3 io.openliberty.tools:liberty-maven-plugin:3.5.1:dev'
       component: dev
       group:
         isDefault: true
