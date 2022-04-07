@@ -14,12 +14,6 @@ components:
         - /dev/null
       command:
         - tail
-      endpoints:
-        - exposure: public
-          name: ep1
-          path: /
-          protocol: http
-          targetPort: 9080
       env:
         - name: DEBUG_PORT
           value: '5858'
@@ -28,6 +22,13 @@ components:
       mountSources: true
       sourceMapping: /projects
     name: dev
+  - openshift:
+    name: webapp
+    endpoints:
+      - name: 'ep1'
+        targetPort: 8080
+        exposure: public
+        path: /
 commands:
   - exec:
       commandLine: 'echo "run command "; mvn -DinstallDirectory=/opt/ol/wlp -Ddebug=false -DhotTests=false -DcompileWait=3 io.openliberty.tools:liberty-maven-plugin:3.5.1:dev'
