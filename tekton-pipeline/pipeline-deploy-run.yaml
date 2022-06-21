@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1alpha1
+apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
   name: tutorial-pipeline-run-1
@@ -9,7 +9,7 @@ spec:
     - name: TLSVERIFY
       value: 'false'
     - name: target-namespace
-      value: dev
+      value: pdf-dev
     - name: target-environment
       value: dev
     - name: repo-url
