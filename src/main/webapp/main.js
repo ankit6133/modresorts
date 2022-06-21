@@ -214,26 +214,26 @@ function callRESTAPI() {
         return
     }
     var resturl = null;
-    var getUrl = window.location;
+    var getUrl = window.location.href;
 
     var request = new XMLHttpRequest();
     if (chosenCity === "Paris"){
-        request.open('GET', getUrl.protocol+ "//" + getUrl.hostname + ":" + getUrl.port + "/weather?selectedCity=Paris", true);
+        request.open('GET', getUrl + "/weather?selectedCity=Paris", true);
     }
     else if (chosenCity === "Las Vegas"){
-        request.open('GET', getUrl.protocol+ "//" + getUrl.hostname + ":" + getUrl.port + "/weather?selectedCity=Las_Vegas", true);
+        request.open('GET', getUrl +  "/weather?selectedCity=Las_Vegas", true);
     }
     else if (chosenCity === "San Francisco"){
-        request.open('GET', getUrl.protocol+ "//" + getUrl.hostname + ":" + getUrl.port + "/weather?selectedCity=San_Francisco", true);
+        request.open('GET', getUrl + "/weather?selectedCity=San_Francisco", true);
     }
     else if (chosenCity === "Miami"){
-        request.open('GET', getUrl.protocol+ "//" + getUrl.hostname + ":" + getUrl.port + "/weather?selectedCity=Miami", true);
+        request.open('GET', getUrl + "/weather?selectedCity=Miami", true);
     }
     else if (chosenCity === "Cork"){
-        request.open('GET', getUrl.protocol+ "//" + getUrl.hostname + ":" + getUrl.port + "/weather?selectedCity=Cork", true);
+        request.open('GET', getUrl + "/weather?selectedCity=Cork", true);
     }
     else if (chosenCity === "Barcelona"){
-        request.open('GET', getUrl.protocol+ "//" + getUrl.hostname + ":" + getUrl.port + "/weather?selectedCity=Barcelona", true);
+        request.open('GET', getUrl + "/weather?selectedCity=Barcelona", true);
     }
 
     request.onload = function() {
