@@ -165,9 +165,10 @@
   
   .travel-dates {
     display: flex;
+    white-space: nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 200px;
+    width: 250px;
     height: 32px;
     margin-left: 30px;
     padding: 0 10px;
@@ -344,4 +345,122 @@
     left: 0;
     top: -61px;
   }
-  
+
+/* Styles for the signup form */
+.signup-form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* Positioning the form on the right side of the screen */
+.signup-form {
+  float: right;
+  margin-right: 20px;
+  margin-top: 200px;
+  color: white;
+  background-color: slategray;
+  border-radius: 10px;
+  padding: 20px;
+
+}
+
+/* Styles for form fields */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#hotelListContainer {
+  float: left;
+  left: 200px;
+  margin-top: 200px;
+  color: white;
+  background-color: slategray;
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 600px;
+  padding-right: 500px;
+}
+
+/* CSS styles for the hotel list */
+.hotel-info {
+  display: none;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#hotels {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#hotels li {
+  margin-bottom: 10px;
+}
+
+#hotels li h3 {
+  margin: 0;
+  color: #333;
+}
+
+#hotels li p {
+  margin: 0;
+  color: #666;
+}
+
+/* Style the "Book Now" button */
+.book-now-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Optional hover effect for the button */
+.book-now-button:hover {
+  background-color: #0069d9;
+}
+
+.hotel-item {
+  display: flex; /* Arrange image and details side-by-side */
+  align-items: center; /* Align content vertically within list item */
+}
+
+.hotel-image-container {
+  flex: 0 0 200px; /* Set fixed width for image container */
+  margin-right: 5px; /* Add spacing between image and details */
+}
+
+.detailsContainer {
+  flex: 1; /* Allow details to fill remaining space */
+}
+
+.hotel-booknow {
+  flex: 0 0 200px; /* Set fixed width for image container */
+  margin-right: 5px; /* Add spacing between image and details */
+}
